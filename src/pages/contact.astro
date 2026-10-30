@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+---
+
+<Base title="联系">
+  <h1>联系</h1>
+  <p class="lede">{site.contactIntro}</p>
+  <p><a class="email" href={`mailto:${site.email}`}>{site.email}</a></p>
+  <ul class="link-list">
+    {
+      site.links.map((link) => (
+        <li>
+          <a href={link.href} target="_blank" rel="noreferrer">
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

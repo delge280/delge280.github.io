@@ -1,0 +1,254 @@
+:root {
+  --bg: #f3efe6;
+  --ink: #1c1915;
+  --muted: #5f584f;
+  --line: #ddd4c6;
+  --accent: #1f4d3a;
+  --serif: "Iowan Old Style", "Palatino Linotype", "Songti SC", "Source Han Serif SC",
+    "Noto Serif SC", SimSun, serif;
+  --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #d5e4db;
+  color: var(--ink);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(40rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 2.75rem 0 4.5rem;
+}
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem 1.5rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--ink);
+}
+
+nav a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+main h1 {
+  margin: 2.8rem 0 1rem;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.8vw, 2.85rem);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+.lede {
+  margin: 0;
+  max-width: 38rem;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+main p {
+  margin: 0 0 1rem;
+}
+
+.section-label {
+  margin: 3rem 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.work-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.work-list li {
+  display: grid;
+  grid-template-columns: 4.25rem 1fr;
+  gap: 0.15rem 1rem;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.year {
+  padding-top: 0.28rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.92rem;
+}
+
+.work-title {
+  font-family: var(--serif);
+  font-size: 1.22rem;
+  line-height: 1.45;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.work-title:hover {
+  color: var(--accent);
+}
+
+.arrow {
+  margin-left: 0.2rem;
+  font-family: var(--sans);
+  font-size: 0.82em;
+}
+
+.summary {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.more {
+  display: inline-block;
+  margin-top: 0.95rem;
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+
+.now {
+  margin-top: 2.25rem;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.now p {
+  margin: 0;
+}
+
+.kicker {
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.now p + p {
+  margin-top: 0.3rem;
+}
+
+.email {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  line-height: 1.4;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+}
+
+.email:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.link-list {
+  list-style: none;
+  margin: 1.35rem 0 0;
+  padding: 0;
+}
+
+.link-list a {
+  display: inline-block;
+  padding: 0.2rem 0;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.link-list a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+main a:not(.work-title):not(.email):not(.more) {
+  color: var(--accent);
+}
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    width: min(40rem, calc(100% - 2rem));
+    padding-top: 1.75rem;
+  }
+
+  .masthead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work-list li {
+    grid-template-columns: 3.4rem 1fr;
+  }
+}

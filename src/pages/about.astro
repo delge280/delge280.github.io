@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+---
+
+<Base title="关于">
+  <h1>关于</h1>
+  {site.about.map((paragraph) => <p>{paragraph}</p>)}
+  {
+    site.now && (
+      <aside class="now">
+        <p class="kicker">现在</p>
+        <p>{site.now}</p>
+      </aside>
+    )
+  }
+</Base>

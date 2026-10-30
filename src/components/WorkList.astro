@@ -1,0 +1,48 @@
+---
+interface Project {
+  title: string;
+  year: string;
+  summary: string;
+  href: string;
+}
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+const items = projects.map((project) => ({
+  ...project,
+  external: project.href.startsWith("http"),
+}));
+---
+
+<ul class="work-list">
+  {
+    items.map((project) => (
+      <li>
+        <span class="year">{project.year}</span>
+        <div>
+          {project.href ? (
+            <a
+              class="work-title"
+              href={project.href}
+              target={project.external ? "_blank" : undefined}
+              rel={project.external ? "noreferrer" : undefined}
+            >
+              {project.title}
+              {project.external && (
+                <span class="arrow" aria-hidden="true">
+                  ↗
+                </span>
+              )}
+            </a>
+          ) : (
+            <span class="work-title">{project.title}</span>
+          )}
+          <p class="summary">{project.summary}</p>
+        </div>
+      </li>
+    ))
+  }
+</ul>

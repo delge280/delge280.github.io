@@ -1,0 +1,16 @@
+---
+import Base from "../layouts/Base.astro";
+import WorkList from "../components/WorkList.astro";
+import { site } from "../data/site";
+---
+
+<Base>
+  <h1>{site.headline}</h1>
+  <p class="lede">{site.intro}</p>
+
+  <section>
+    <h2 class="section-label">作品</h2>
+    <WorkList projects={site.projects.slice(0, 3)} />
+    <a class="more" href="/work">全部作品</a>
+  </section>
+</Base>

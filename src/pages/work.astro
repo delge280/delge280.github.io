@@ -1,0 +1,11 @@
+---
+import Base from "../layouts/Base.astro";
+import WorkList from "../components/WorkList.astro";
+import { site } from "../data/site";
+---
+
+<Base title="作品">
+  <h1>作品</h1>
+  <p class="lede">{site.workIntro}</p>
+  <WorkList projects={site.projects} />
+</Base>
